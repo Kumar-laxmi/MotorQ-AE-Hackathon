@@ -15,7 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
+
+from start import views as start_views
+from admins import views as admin_views
+from participant import views as participant_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # URLS associated with the start app
+    path('', start_views.home, name='home'),
+    path('register/', start_views.register, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='./login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='./logout.html'), name='logout'),
+
+    # URLS associated with the admins app
+    path('admin_home/', admin_views.home, name='admin_home'),
+
+    # URLS associated with the participant app
+    path('participant_home/', participant_views.home, name='participant_home'),
+
 ]
