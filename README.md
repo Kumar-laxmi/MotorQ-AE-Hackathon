@@ -1,2 +1,12 @@
 # MotorQ-AE-Hackathon
 Intern recruitment hackathon
+
+To run the application locally:
+1. ```git clone https://github.com/Kumar-laxmi/MotorQ-AE-Hackathon.git```
+2. ```cd MotorQ-AE-Hackathon```
+3. ```pytho3 -m venv env```
+4. ```source env/bin/activate```
+5. ```pip install -r requirements.txt```
+6. ```python3 manage.py migrate```
+7. ```python3 manage.py createsuperuser```
+8. ```python3 manage.py runserver```
